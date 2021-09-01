@@ -2,9 +2,11 @@
     "name": "node-js1",
     "version": "1.0.0",
     "description": "",
-    "main": "index.js",
+    "main": "src/index.js",
     "scripts": {
-        "start": "nodemon --inspect ./index.js localhost 3000",
+        "beautiful": "prettier --single-quote --trailing-comma all --tab-width 4 --write \"src/**/*.{js,json,scss}\"",
+        "start": "nodemon --inspect src/index.js localhost 3000",
+        "watch": "node-sass --watch src/resources/scss/ --output src/public/css/",
         "test": "echo \"Error: no test specified\" && exit 1"
     },
     "repository": {
@@ -21,9 +23,20 @@
     },
     "homepage": "https://github.com/bongmeomeo/nodejs_1#readme",
     "dependencies": {
-        "express": "^4.17.1"
+        "express": "^4.17.1",
+        "express-handlebars": "^5.3.3",
+        "method-override": "^3.0.0",
+        "mongoose": "^5.13.8",
+        "mongoose-delete": "^0.5.3",
+        "node-sass": "^6.0.1"
     },
     "devDependencies": {
-        "nodemon": "^2.0.12"
+        "handlebars": "^4.5.0",
+        "husky": "^7.0.1",
+        "lint-staged": "^11.1.2",
+        "mongoose-slug-generator": "^1.0.4",
+        "morgan": "^1.10.0",
+        "nodemon": "^2.0.12",
+        "prettier": "^2.3.2"
     }
 }
